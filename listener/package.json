@@ -2,7 +2,7 @@
   "name": "listener",
   "version": "1.0.0",
   "description": "",
-  "main": "provider/web3.js",
+  "main": "provider/web3.spec.js",
   "scripts": {
     "test": "mocha --recursive *.spec.mjs",
     "prettier": "prettier --write *.{mjs,js,json,md}"
