@@ -4,6 +4,7 @@ services:
     image: confluentinc/cp-kafka:latest
     hostname: kafka
     container_name: kafka
+    user: root
     ports:
       - "9092:9092"
       - "9101:9101"
