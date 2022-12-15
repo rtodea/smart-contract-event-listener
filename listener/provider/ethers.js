@@ -18,6 +18,6 @@ export class EthersListener {
       callback(event);
     });
 
-    return subscription;
+    return this.subscription;
   }
 }
