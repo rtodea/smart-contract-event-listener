@@ -1,7 +1,7 @@
 version: "2"
 services:
   kafka:
-    image: confluentinc/cp-kafka:7.2.x-latest
+    image: confluentinc/cp-kafka:latest
     hostname: kafka
     container_name: kafka
     ports:
