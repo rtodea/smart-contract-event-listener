@@ -9,7 +9,7 @@ const kafka = new Kafka({
   clientId: "example-producer"
 });
 
-const topic = "topic-test";
+const topic = "topic-test-new";
 const producer = kafka.producer();
 
 const getRandomNumber = () => Math.round(Math.random(10) * 1000);

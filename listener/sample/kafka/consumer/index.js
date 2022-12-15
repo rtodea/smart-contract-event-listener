@@ -9,7 +9,7 @@ const kafka = new Kafka({
   clientId: "example-consumer"
 });
 
-const topic = "topic-test";
+const topic = "topic-test-new";
 const consumer = kafka.consumer({ groupId: "test-group" });
 
 const run = async () => {
