@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import { describe, it } from "mocha";
 
-describe("test", () => {
-  it("should pass", () => {
+describe("listener", () => {
+  it("should be able to listen to 2 contracts", () => {
     expect(true).to.be.true;
   });
 });

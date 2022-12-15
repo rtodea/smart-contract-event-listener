@@ -31,7 +31,8 @@ describe("ethers.js integration", () => {
 
   it("should listen to eth events", (done) => {
     const filter = {
-      address: process.env.SAMPLE_CONTRACT_ADDRESS,
+      // this is not the same as the contract address
+      address: "",
       topics: [
         ethers.utils.id("Transfer(address,address,uint256)"),
       ]
