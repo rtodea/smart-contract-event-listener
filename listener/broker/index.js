@@ -20,14 +20,14 @@ export class EventProducer {
 
   async emit(topic, event) {
     const messages = [{ key: event.event, value: JSON.stringify(event) }];
-    console.log("[event-producer] emitting", topic, messages);
+    console.log("[event-producer] emitting on topic", topic, messages);
     this.producer
       .send({
         topic,
         compression: CompressionTypes.GZIP,
         messages
       })
-      .then(console.log)
+      .then((message) => console.log(`[event-producer] metadata`, message))
       .catch(e => console.error(`[event-producer] ${e.message}`, e));
   }
 

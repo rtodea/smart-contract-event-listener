@@ -4,7 +4,9 @@ export class Storage {
   }
 
   save(key, value) {
+    console.log("Saving", key, value);
     this._storage.set(key, value);
+    console.log("Storage size", this._storage.size);
   }
 
   read(key) {

@@ -13,7 +13,7 @@ async function main() {
 
   await eventConsumer.subscribe(contractAddress, (contractEvent) => {
     console.log(contractAddress, "indexing", contractEvent);
-    storage.save(contractEvent.transationHash, contractEvent);
+    storage.save(contractEvent.transactionHash, contractEvent);
   });
 }
 

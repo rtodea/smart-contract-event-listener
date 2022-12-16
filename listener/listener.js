@@ -24,7 +24,15 @@ class Listener {
   }
 }
 
+const showInfo = () => {
+  console.log(`
+  Listening for 📑${process.env.SAMPLE_CONTRACT_ADDRESS} smart contract events
+  From Infura WebSocket: ⫘ ${process.env.INFURA_WS_URL} ...
+  Broadcasting them to 🛰 ${process.env.BROKER_URL} ᯤ ...`);
+}
+
 async function main() {
+  showInfo();
   const contractAbi = JSON.parse(readFileSync(process.env.SAMPLE_CONTRACT_ABI, { encoding: "utf8" }));
   const sampleContract = {
     contractAddress: process.env.SAMPLE_CONTRACT_ADDRESS,

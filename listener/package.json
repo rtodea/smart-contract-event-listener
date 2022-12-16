@@ -5,7 +5,8 @@
   "main": "provider/web3.spec.js",
   "scripts": {
     "test": "mocha --recursive",
-    "prettier": "prettier --write *.{mjs,js,json,md}"
+    "prettier": "prettier --write *.{mjs,js,json,md}",
+    "start": "node listener.js"
   },
   "type": "module",
   "author": "",
