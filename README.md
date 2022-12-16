@@ -100,6 +100,8 @@ indexer      |  Broadcast available at 📡 192.168.64.20:9092 ...
 3. `docker-compose.yml` for wrapping everything
 4. `.env` for environment variables when outside of `Docker`
 5. `kafka` for message broker 
+6. contract we are listening to: [_Sand Token_](https://etherscan.io/token/0x3845badAde8e6dFF049820680d1F14bD3903a5d0) 
+   and not _CareBear_ as suggested in the assignment due to `infura` limitations for free account
 
 
 ## 📝 TODOs
