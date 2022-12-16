@@ -29,7 +29,7 @@ services:
       BROKER_URL: ${HOST_IP}:9092
       INFURA_API_KEY: c11683b6f8994117bd89eb49666ceaeb
       INFURA_WS_URL: wss://mainnet.infura.io/ws/v3
-      SAMPLE_CONTRACT_ADDRESS: 0x3845badAde8e6dFF049820680d1F14bD3903a5d0
+      SAMPLE_CONTRACT_ADDRESS: "0x3845badAde8e6dFF049820680d1F14bD3903a5d0"
       SAMPLE_CONTRACT_ABI: ./sample/abi/etherSandABI.json
 
   mongodb:
@@ -45,6 +45,6 @@ services:
     restart: on-failure
     environment:
       BROKER_URL: ${HOST_IP}:9092
-      SAMPLE_CONTRACT_ADDRESS: 0x3845badAde8e6dFF049820680d1F14bD3903a5d0
+      SAMPLE_CONTRACT_ADDRESS: "0x3845badAde8e6dFF049820680d1F14bD3903a5d0"
       MONGO_URL: mongodb://mongo:27017
       MONGO_DB: etherSand
