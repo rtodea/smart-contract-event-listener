@@ -32,7 +32,7 @@ In the following video from [Moralis Dashboard overview](https://www.youtube.com
 
 ## 🏗️ Solution Overview
 
-<img src="./docs/images/components.svg" alt="components">
+<img src="./docs/images/components.png" alt="components">
 
 Main Parts:
 
