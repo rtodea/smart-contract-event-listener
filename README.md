@@ -1,4 +1,4 @@
-# smart-contract-event-listener 📑 🛰 📡
+# 📑 🛰 📡 Smart Contract Events Indexer 
 
 Implement a mechanism that can index events for a certain smart contract.
 
@@ -36,11 +36,36 @@ In the following video from [Moralis Dashboard overview](https://www.youtube.com
 
 Main Parts:
 
-1. infura websocket connection for listening to ethereum main net
-2. message broker for decoupling the event listener and the event processor
+1. `infura` websocket connection for listening to ethereum main net
+2. message broker (`kafka`) for decoupling the event listener and the event processor
 3. [`listener`](./listener/listener.js) --- event listener connects to chain and broadcasts
 4. [`indexer`](./indexer/indexer.js) --- event processor listens to the message broker and adds to storage
 
+Sequence Diagram:
+
+```mermaid
+sequenceDiagram
+    participant Infura as Infura 🌩️
+    participant Listener as Listener 📡
+    participant Broker as Broker 📬
+    participant Indexer as Indexer 💱
+    participant Storage as Storage 📦
+    Listener->> Broker: connect(topic)
+    Note right of Listener: {topic: "0xA..."}
+    Indexer->>Broker: subscribe(topic)
+    Note left of Indexer: listen({topic: "0xA..."})  
+    Listener->>Infura: init()
+    Note left of Listener: {blockChain, contractAddress: "0xA..."}
+    Infura->>Listener: ⚡ SmartContractEvent_1
+    Note right of Infura: {contractAddress: "0xA...", event: "Transfer", ...} 
+    Listener->>Broker: send(topic, 📧 Message_21)
+    Note right of Listener: {topic: "0xA...", key: "Transaction", value: ...})
+    Infura->>Listener: ⚡ SmartContractEvent_2
+    Infura->>Listener: ⚡ SmartContractEvent_3
+    Broker->>Indexer: receive(📧 Message_21)
+    Indexer->>Storage: save(💾)
+    Note right of Indexer: {contractAddress: "0xA...", event: "Transfer", ...}
+```
 
 ## 🚀 Quick Installation
 
