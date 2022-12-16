@@ -15,6 +15,7 @@ export class EthersListener {
   subscribe({contractAddress ,contractAbi}, callback) {
     const contract = new ethers.Contract(contractAddress, contractAbi, this.provider);
     this.subscription = contract.on("*", (event) => {
+      console.log("[ethers.js]", event);
       callback(event);
     });
 
