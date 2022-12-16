@@ -4,7 +4,7 @@ Implement a mechanism that can index events for a certain smart contract.
 
 Suggestions:
 
-1. [Infura](https://www.infura.io/) account created for externalizing node calls
+1. [Infura](https://www.infura.io/) account created for externalizing EVM node calls
 2. [_CareBear_ ERC-20 smart contract](https://polygonscan.com/address/0x6709660a6237723f278188bcae9e21b21eff8aab) deployed to Polygon main net
 
 
@@ -95,11 +95,11 @@ indexer      |  Broadcast available at 📡 192.168.64.20:9092 ...
 
 ## ⚛️ Developer Notes
 
-1. `indexer` and `listener` are NodeJS projects (`nvm use` / `npm ci` / `npm start`)
+1. `indexer` and `listener` are NodeJS projects (`nvm use` / `npm ci` / `npm start` / (optional) `npm test`)
 2. `mocha/chai` for unit tests --- `*.spec.js` have been used to better understand `web3.js` and `ethers.js`
 3. `docker-compose.yml` for wrapping everything
 4. `.env` for environment variables when outside of `Docker`
-5. `kafka` for message broker 
+5. `kafka` for message broker --- very limited setup for demo purposes
 6. contract we are listening to: [_Sand Token_](https://etherscan.io/token/0x3845badAde8e6dFF049820680d1F14bD3903a5d0) 
    and not _CareBear_ as suggested in the assignment due to `infura` limitations for free account
 
